@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from 'react';
+import BarangPages from './pages/BarangPages';
+// import Navbar from './components/Navbar';
+// import Home from './pages/MyHome';
+import AddBarang from './pages/AddBarang';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Fragment>
+          {/* <Navbar /> */}
+          {/* <Home/> */}
+          {/* <BlogPages /> */}
+          {/* <Route path='/' exact componnent={Home} /> */}
+          <Route path='/' exact componnent={BarangPages} />
+          <Route path='/add-barang/' componnent={AddBarang} />
+        </Fragment>
+      </Router>
+    );
+  }
 }
-
-export default App;
